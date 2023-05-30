@@ -1,5 +1,6 @@
 import xml.etree.ElementTree as ET
 from tabulate import tabulate
+import argparse
 
 def parse_nmap_xml(xmlfile):
     # Parse XML
@@ -31,5 +32,9 @@ def parse_nmap_xml(xmlfile):
         print("\n")
 
 if __name__ == "__main__":
-    parse_nmap_xml('mainsubnet.xml')
+    parser = argparse.ArgumentParser(description='Parse an Nmap XML file.')
+    parser.add_argument('xmlfile', type=str, help='Path to the XML file')
+    args = parser.parse_args()
+    
+    parse_nmap_xml(args.xmlfile)
 
