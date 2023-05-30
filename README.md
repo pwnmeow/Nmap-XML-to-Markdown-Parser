@@ -17,6 +17,7 @@ After installing the dependencies, you can run the script with:
 python script.py <path_to_your_nmap.xml>
 Replace <path_to_your_nmap.xml> with the path to your Nmap XML file.
 ```
+> It also works with -iL and list of hosts passed to nmap 
 
 The script will print the markdown formatted output to the console. If you want to save this output to a markdown file, you can redirect the output like so:
 
@@ -48,7 +49,6 @@ This script assumes that every port in the Nmap XML file has a 'service' child w
 
 
 
-> It also works with -iL and list of hosts passed to nmap 
 
 Generates results like this 
 
