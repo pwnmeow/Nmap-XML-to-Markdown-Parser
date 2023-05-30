@@ -22,7 +22,9 @@ def parse_nmap_xml(xmlfile):
             version = port.find('service').get('version')
             extrainfo = port.find('service').get('extrainfo')
 
-            service_info = f"{service} {product} {version} {extrainfo}".strip()
+            # Combine all service details and filter out None values
+            service_info_parts = [service, product, version, extrainfo]
+            service_info = " ".join(part for part in service_info_parts if part)
 
             table_data.append([port_id, service_info])
         
